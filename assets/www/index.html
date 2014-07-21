@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile: Demos and Documentation</title>
+
+	<link rel="stylesheet"  href="jquery.mobile/jquery.mobile-1.1.0.css" />
+	<link rel="stylesheet" href="docs/assets/css/jqm-docs.css" />
+	<link rel="stylesheet" href="docsdemos-style-override.css" />
+	<link rel="stylesheet" href="http://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.css">
+	
+
+	<!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />-->
+	<!-- <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+	<!-- <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>-->
+	</head> 
+<body> 
+<div data-role="page" id="jqm-home" class="type-home">
+	<div data-role="content">
+				
+		<div class="content-primary" data-role="header" data-position="fixed">
+			<nav class="ui-grid-a">
+				<div class="ui-block-a">
+					<select id='provincia' name='provincia' onchange="changeProvincia()">
+						<option value='%C3%81lava'>&Aacute;lava</option>
+					    <option value='Albacete'>Albacete</option>
+					    <option value='Alicante'>Alicante</option>
+					    <option value='Almer%C3%ADa'>Almer&iacute;a</option>
+					    <option value='Asturias'>Asturias</option>
+					    <option value='%C3%81vila'>&Aacute;vila</option>
+					    <option value='Badajoz'>Badajoz</option>
+					    <option value='Barcelona'>Barcelona</option>
+					    <option value='Burgos'>Burgos</option>
+					    <option value='C%C3%A1ceres'>C&aacute;ceres</option>
+					    <option value='C%C3%A1diz'>C&aacute;diz</option>
+					    <option value='Cantabria'>Cantabria</option>
+					    <option value='Castell%C3%B3n'>Castell&oacute;n</option>
+					    <option value='Ceuta'>Ceuta</option>
+					    <option value='Ciudad+Real'>Ciudad Real</option>
+					    <option value='C%C3%B3rdoba'>C&oacute;rdoba</option>
+					    <option value='Cuenca'>Cuenca</option>
+					    <option value='Girona'>Girona</option>
+					    <option value='Las+Palmas'>Las Palmas</option>
+					    <option value='Granada'>Granada</option>
+					    <option value='Guadalajara'>Guadalajara</option>
+					    <option value='Guip%C3%BAzcoa'>Guip&uacute;zcoa</option>
+					    <option value='Huelva'>Huelva</option>
+					    <option value='Huesca'>Huesca</option>
+					    <option value='Islas+Baleares'>Islas Baleares</option>
+					    <option value='Ja%C3%A9n'>Ja&eacute;n</option>
+					    <option value='A+Coru%C3%B1a'>A Coru&ntilde;a</option>
+					    <option value='La+Rioja'>La Rioja</option>
+					    <option value='Le%C3%B3n'>Le&oacute;n</option>
+					    <option value='Lleida'>Lleida</option>
+					    <option value='Lugo'>Lugo</option>
+					    <option value='Madrid'>Madrid</option>
+					    <option value='M%C3%A1laga'>M&aacute;laga</option>
+					    <option value='Melilla'>Melilla</option>
+					    <option value='Murcia'>Murcia</option>
+					    <option value='Navarra'>Navarra</option>
+					    <option value='Orense'>Orense</option>
+					    <option value='Palencia'>Palencia</option>
+					    <option value='Pontevedra'>Pontevedra</option>
+					    <option value='Salamanca'>Salamanca</option>
+					    <option value='Segovia'>Segovia</option>
+					    <option value='Sevilla'>Sevilla</option>
+					    <option value='Soria'>Soria</option>
+					    <option value='Tarragona'>Tarragona</option>
+					    <option value='Sant+Cruz+de+Tenerife'>Santa Cruz de Tenerife</option>
+					    <option value='Teruel'>Teruel</option>
+					    <option value='Toledo'>Toledo</option>
+					    <option value='Valencia'>Valencia</option>
+					    <option value='Valladolid'>Valladolid</option>
+					    <option value='Vizcaya'>Vizcaya</option>
+					    <option value='Zamora'>Zamora</option>
+					    <option value='Zaragoza'>Zaragoza</option>
+					</select>
+				</div>
+
+			</nav>
+		</div>		
+		
+		<div id="content"></div>
+
+	</div>
+	
+	<div data-role="footer" data-position="fixed" class="footer-docs" data-theme="c">
+			<p>&copy; 2014 Fernando Lopez</p>
+	</div>	
+	
+</div>
+
+	<script type="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></script>
+	<script type="text/javascript" src="jquery.mobile/jquery.mobile-1.1.0.js"></script>
+	<!-- Uncomment following line to access PhoneGap APIs (not necessary to use PhoneGap to package web app) -->
+	<!-- <script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>-->	
+    
+	<!--Add a button for the user to click to initiate auth sequence -->
+    <script type="text/javascript">
+		// Enter the API key from the Google Develoepr Console - to handle any unauthenticated
+		// requests in the code.
+		// The provided key works for this sample only when run from
+		// https://google-api-javascript-client.googlecode.com/hg/samples/authSample.html
+		// To use in your own application, replace this API key with your own.
+		var apiKey = 'AIzaSyApTkClIarnL0YxOWSm3A1vrI6p2tO5YWs';
+
+	  	// To enter one or more authentication scopes, refer to the documentation for the API.
+	  	var scopes = 'https://www.googleapis.com/auth/plus.me';
+		
+		function cambiar_fecha_esp(date){
+            var dia = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"];            
+            var mes = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+            
+            return dia[date.getDay()] + "  " + date.getDate() + " de " + mes[date.getMonth()];        
+        }
+               
+        function fechaHoy(){
+            var d = new Date();
+            function pad(n){
+                return n<10 ? '0'+n : n
+            }
+            
+            return d.getUTCFullYear()+ '-' + pad(d.getUTCMonth()+1)+ '-' + pad(d.getUTCDate()) + 'T00:00:00Z';
+        }
+        
+      	// Use a button to handle authentication the first time.
+		function handleClientLoad() {
+			document.addEventListener("deviceready", onDeviceReady, false);
+			gapi.client.setApiKey(apiKey);
+			gapi.client.load('calendar', 'v3', makeRequest);
+		}
+
+
+		function appendResults(text, bold) {
+            var results = $('#content');        
+            if(bold){
+                $('<h1/>').appendTo('#content').append(document.createTextNode(text));
+            }
+            else{
+                $('<p/>').appendTo('#content').append(document.createTextNode(text));
+            }
+		}
+
+		function makeRequest(provincia) {
+		    var request = gapi.client.calendar.events.list({
+		        'calendarId': 'toroonada@gmail.com',
+		        'timeMin': fechaHoy(),
+		        'orderBy': 'startTime',
+		        'singleEvents': 'true',
+		        'q': decodeURIComponent(provincia)
+		    });
+		    
+		    $('#content').html("");
+		                
+			request.execute(function(response) {         
+				if (response.items){            
+					for(i=0; i<response.items.length; i++){   
+                        var date = new Date(response.items[i].start.dateTime);     
+                        appendResults(response.items[i].location, true);
+                        appendResults(cambiar_fecha_esp(date), false);
+                        appendResults(date.toLocaleTimeString() + " " + response.items[i].description, false);
+					}
+				}
+			});
+		}
+      
+		function changeProvincia(){
+		    makeRequest($('#provincia').val());
+		}
+
+		function onDeviceReady() {
+		      document.addEventListener("backbutton", handleBackButton, true);
+		}
+		function handleBackButton(){
+		 
+		    /*if($.mobile.activePage.attr('id') == 'home'
+		              || $.mobile.activePage.attr('id') == 'listaUsuarios'){
+		        navigator.app.exitApp();
+		    }else if ($.mobile.activePage.attr('id') == 'cita'){
+		        $.mobile.changePage('#listaUsuarios');
+		    }else{
+		        navigator.app.backHistory();
+		    }*/
+		    navigator.app.backHistory();
+		}
+		 
+		
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+</body>
+</html>
